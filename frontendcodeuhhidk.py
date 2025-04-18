@@ -37,4 +37,5 @@ while i != "00":
             print("syntax error! file accepts arguments: star")
     else:
         print("command unrecognized! commands known: file")
-            
+    
+print("im in hell")
