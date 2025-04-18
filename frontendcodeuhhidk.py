@@ -14,13 +14,27 @@ while i != "00":
     print(syntax1)
     print(syntax2)
 
-    i = "00"
+    # idiot break
+    #i = "00"
 
-    
 
+    #checks for recognized command
 
-    # checks for recognized command
-
-    # if opener == "file":
-    #     if syntax1 == "starred":
-     #       if syntax2 ==
+    if opener == "file":
+        if syntax1 == "star":
+            if syntax2 == "toggle":
+                #[FILE STARRED VARIABLE HERE] = ![VARIABLE AGAIN]
+                print("changed the star value ^w^") #REMOVE THIS LATER
+            if syntax2 == "on":
+                #[FILE STARRED VARIABLE HERE] = True
+                print("file star value is true now! ^w^") #REMOVE THIS LATER
+            if syntax2 == "off":
+                #[FILE STARRED VARIABLE HERE] = False
+                print("file star value is false now! ^w^") #REMOVE THIS LATER
+            else:
+                print("syntax error! file true accepts arguments: toggle, on, off")
+        else:
+            print("syntax error! file accepts arguments: star")
+    else:
+        print("command unrecognized! commands known: file")
+            
