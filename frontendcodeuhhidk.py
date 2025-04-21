@@ -6,13 +6,18 @@ while i != "00":
     cmd = input()
     cmdarr = cmd.split(" ")
     opener = cmdarr[0]
-    syntax1 = cmdarr[1]
-    syntax2 = cmdarr[2]
+    if len(cmdarr) >= 2:
+        syntax1 = cmdarr[1]
+    if len(cmdarr) >= 3:
+        syntax2 = cmdarr[2]
 
     #test cases
+    print("\n")
     print(opener)
-    print(syntax1)
-    print(syntax2)
+    if len(cmdarr) >= 2:
+        print(syntax1)
+    if len(cmdarr) >= 3:
+        print(syntax2)
 
     # idiot break
     #i = "00"
@@ -28,14 +33,19 @@ while i != "00":
             if syntax2 == "on":
                 #[FILE STARRED VARIABLE HERE] = True
                 print("file star value is true now! ^w^") #REMOVE THIS LATER
+                break
             if syntax2 == "off":
                 #[FILE STARRED VARIABLE HERE] = False
                 print("file star value is false now! ^w^") #REMOVE THIS LATER
+                break
             else:
-                print("syntax error! file true accepts arguments: toggle, on, off")
+                print("syntax error! file star accepts arguments: toggle, on, off")
+                break
         else:
             print("syntax error! file accepts arguments: star")
+            break
     else:
         print("command unrecognized! commands known: file")
+        break
     
 print("im in hell")
