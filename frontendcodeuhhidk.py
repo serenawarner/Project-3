@@ -3,7 +3,10 @@ while i != "00":
     
     # generates array of command and syntaxes
 
+
     cmd = input()
+
+
     cmdarr = cmd.split(" ")
     opener = cmdarr[0]
     if len(cmdarr) >= 2:
@@ -30,22 +33,20 @@ while i != "00":
             if syntax2 == "toggle":
                 #[FILE STARRED VARIABLE HERE] = ![VARIABLE AGAIN]
                 print("changed the star value ^w^") #REMOVE THIS LATER
-            if syntax2 == "on":
+            elif syntax2 == "on":
                 #[FILE STARRED VARIABLE HERE] = True
                 print("file star value is true now! ^w^") #REMOVE THIS LATER
-                break
-            if syntax2 == "off":
+            elif syntax2 == "off":
                 #[FILE STARRED VARIABLE HERE] = False
                 print("file star value is false now! ^w^") #REMOVE THIS LATER
-                break
             else:
                 print("syntax error! file star accepts arguments: toggle, on, off")
-                break
+                
         else:
             print("syntax error! file accepts arguments: star")
-            break
+            
     else:
         print("command unrecognized! commands known: file")
-        break
+        
     
-print("im in hell")
+# print("im in hell")
