@@ -21,13 +21,6 @@ class Note(notebook_db.Model):
     folder_id = notebook_db.Column(notebook_db.Integer, notebook_db.ForeignKey('folder.id'), nullable=False)
 
 
-
-folder = Folder(name="Work")
-note = Note(title="Meeting Notes", content="Discussed timelines", folder=folder)
-
-notebook_db.session.add(folder)
-notebook_db.session.add(note)
-notebook_db.session.commit()
-work_folder = Folder.query.filter_by(name="Work").first()
-print(work_folder.notes)  # Returns all notes in the "Work" folder
+with notebook.app_context():
+    notebook_db.create_all()
 
