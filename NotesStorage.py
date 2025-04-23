@@ -33,3 +33,6 @@ def get_notes(group_id: str, date: str = None) -> list:
         with open(filename, "r", encoding="utf-8") as f:
             return json.load(f)
     return []
+
+
+#russell Makopa
