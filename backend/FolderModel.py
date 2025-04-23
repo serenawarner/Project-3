@@ -24,5 +24,3 @@ class Note(notebook_db.Model):
 with notebook.app_context():
     notebook_db.create_all()
 
-
-
