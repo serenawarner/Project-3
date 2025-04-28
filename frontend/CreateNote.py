@@ -49,7 +49,24 @@ def delete_note():
             if note.strip() != note_to_delete:
                 file.write(note)
     print("Note has been deleted.")
+def read_notes():
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+    for note in notes:
+        print(note.strip())
+
+def delete_note():
+    note_to_delete = input("Enter the note you want to delete:")
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+    with open(file_path, "w") as file:
+        for note in notes:
+            if note.strip() != note_to_delete:
+                file.write(note)
+    print("Note has been deleted.")
 
 if __name__ == "__main__":
     create_note()
+
+
 
