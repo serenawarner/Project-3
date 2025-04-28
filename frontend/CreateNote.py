@@ -60,7 +60,7 @@ def delete_note():
     with open(file_path, "r") as file:
         notes = file.readlines()
     with open(file_path, "w") as file:
-        for note in notes:
+        for note in notes: 
             if note.strip() != note_to_delete:
                 file.write(note)
     print("Note has been deleted.")
