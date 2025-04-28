@@ -28,6 +28,7 @@ def create_note():
     with open(file_path, "w") as file:
         file.write(full_note)
 
+
     store_note_db(folder_tag=folder_tag, filepath=file_path, user=user)
     print("Note saved to database and JSON.")
 
@@ -45,7 +46,9 @@ def delete_note():
         for note in notes:
             if note.strip() != note_to_delete:
                 file.write(note)
+
     print("Note has been deleted.")
+
 
 if __name__ == "__main__":
     create_note()
