@@ -25,6 +25,7 @@ while i != "00":
     # idiot break
     #i = "00"
 
+    filestar = True # replace this with file.starred variable once backend exists
 
     #checks for recognized command
 
@@ -32,11 +33,17 @@ while i != "00":
         if syntax1 == "star":
             if syntax2 == "toggle":
                 #[FILE STARRED VARIABLE HERE] = ![VARIABLE AGAIN]
-                print("changed the star value ^w^") #REMOVE THIS LATER
+                if filestar == True:
+                    filestar = False
+                else:
+                    filestar = True # this is broken and i have absolutely no clue why
+                print("changed the star value to " + str(filestar) + " ^w^") #REMOVE THIS LATER (or dont im not ur boss and the face is cute)
             elif syntax2 == "on":
+                filestar = True
                 #[FILE STARRED VARIABLE HERE] = True
                 print("file star value is true now! ^w^") #REMOVE THIS LATER
             elif syntax2 == "off":
+                filestar = False
                 #[FILE STARRED VARIABLE HERE] = False
                 print("file star value is false now! ^w^") #REMOVE THIS LATER
             else:
