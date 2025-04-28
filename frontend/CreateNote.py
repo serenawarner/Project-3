@@ -9,7 +9,6 @@ def create_note():
         file.write(note + "\n")
     print("note has been created")
 
-
 def read_notes():
     with open (file_path, "r") as file:
         notes = file.readlines()
@@ -30,6 +29,4 @@ def delete_note():
 
 if __name__ == "__main__":
     create_note()
-
-
 
