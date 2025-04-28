@@ -19,6 +19,7 @@ class Note(notebook_db.Model):
     title = notebook_db.Column(notebook_db.String, nullable=False)
     content = notebook_db.Column(notebook_db.Text) #import from createnote
     folder_id = notebook_db.Column(notebook_db.Integer, notebook_db.ForeignKey('folder.id'), nullable=False)
+    date = notebook_db.Column(notebook_db.DateTime, nullable=False)
 
 
 with notebook.app_context():

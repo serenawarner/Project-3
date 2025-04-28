@@ -1,5 +1,6 @@
 import sys
 import os
+from datetime import datetime
 
 # Add backend directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend')))
@@ -21,7 +22,9 @@ def create_note():
     user = input("Enter your name: ")
     title = input("Enter the note title: ")
     content = input("Enter your note:\n")
-    full_note = f"{title}\n{content}"
+    creation_time = datetime.now()
+
+    full_note = f"{title}\n{content}\n{creation_time}"
 
     # Save the title + content to a temp .txt file
     file_path = "notes.txt"
