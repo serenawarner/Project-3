@@ -1,5 +1,6 @@
 import sys
 import os
+from datetime import datetime
 
 # Add backend directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend')))
@@ -21,7 +22,9 @@ def create_note():
     user = input("Enter your name: ")
     title = input("Enter the note title: ")
     content = input("Enter your note:\n")
-    full_note = f"{title}\n{content}"
+    creation_time = datetime.now()
+
+    full_note = f"{title}\n{content}\n{creation_time}"
 
     # Save the title + content to a temp .txt file
     file_path = "notes.txt"
@@ -48,8 +51,25 @@ def delete_note():
                 file.write(note)
 
     print("Note has been deleted.")
+def read_notes():
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+    for note in notes:
+        print(note.strip())
+
+def delete_note():
+    note_to_delete = input("Enter the note you want to delete:")
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+    with open(file_path, "w") as file:
+        for note in notes: 
+            if note.strip() != note_to_delete:
+                file.write(note)
+    print("Note has been deleted.")
 
 
 if __name__ == "__main__":
     create_note()
+
+
 
