@@ -1,6 +1,8 @@
 import sys
 import os
 from datetime import datetime
+import tkinter as tk
+from tkinter import font
 
 # Add backend directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend')))
@@ -51,21 +53,28 @@ def delete_note():
                 file.write(note)
 
     print("Note has been deleted.")
-def read_notes():
-    with open(file_path, "r") as file:
-        notes = file.readlines()
-    for note in notes:
-        print(note.strip())
 
-def delete_note():
-    note_to_delete = input("Enter the note you want to delete:")
+def list_notes():
     with open(file_path, "r") as file:
         notes = file.readlines()
-    with open(file_path, "w") as file:
-        for note in notes: 
-            if note.strip() != note_to_delete:
-                file.write(note)
-    print("Note has been deleted.")
+        print("Notes:")
+        for note in notes:
+            print(note.strip())
+
+def update_note():
+    note_to_update = input("Enter the note you want to update")
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+        with open(file_path, "w") as file:
+            for note in notes:
+                if note.strip() == note_to_update:
+                    new_note = input("Enter the new note:")
+                    file.write(new_note +"\n")
+                else:
+                    file.write(note)
+    print("Note has been updated.")
+
+
 
 
 if __name__ == "__main__":
