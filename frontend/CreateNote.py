@@ -76,6 +76,25 @@ def update_note():
 
 
 
+def list_notes():
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+        print("Notes:")
+        for note in notes:
+            print(note.strip())
+
+def update_note():
+    note_to_update = input("Enter the note you want to update")
+    with open(file_path, "r") as file:
+        notes = file.readlines()
+        with open(file_path, "w") as file:
+            for note in notes:
+                if note.strip() == note_to_update:
+                    new_note = input("Enter the new note:")
+                    file.write(new_note +"\n")
+                else:
+                    file.write(note)
+    print("Note has been updated.")
 
 if __name__ == "__main__":
     create_note()
