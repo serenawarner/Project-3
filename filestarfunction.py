@@ -1,0 +1,59 @@
+i = "0"
+while i != "00":
+    
+    # generates array of command and syntaxes
+
+
+    cmd = input()
+
+
+    cmdarr = cmd.split(" ")
+    opener = cmdarr[0]
+    if len(cmdarr) >= 2:
+        syntax1 = cmdarr[1]
+    if len(cmdarr) >= 3:
+        syntax2 = cmdarr[2]
+
+    #test cases
+    print("\n")
+    print(opener)
+    if len(cmdarr) >= 2:
+        print(syntax1)
+    if len(cmdarr) >= 3:
+        print(syntax2)
+
+    # idiot break
+    #i = "00"
+
+    filestar = True # replace this with file.starred variable once backend exists
+
+    #checks for recognized command
+
+    if opener == "file":
+        if syntax1 == "star":
+            if syntax2 == "toggle":
+                #[FILE STARRED VARIABLE HERE] = ![VARIABLE AGAIN]
+                if filestar == True:
+                    filestar = False
+                else:
+                    filestar = True # this is broken and i have absolutely no clue why
+                print("changed the star value to " + str(filestar) + " ^w^") #REMOVE THIS LATER (or dont im not ur boss and the face is cute)
+            elif syntax2 == "on":
+                filestar = True
+                #[FILE STARRED VARIABLE HERE] = True
+                print("file star value is true now! ^w^") #REMOVE THIS LATER
+            elif syntax2 == "off":
+                filestar = False
+                #[FILE STARRED VARIABLE HERE] = False
+                print("file star value is false now! ^w^") #REMOVE THIS LATER
+            else:
+                print("syntax error! file star accepts arguments: toggle, on, off")
+                
+        else:
+            print("syntax error! file accepts arguments: star")
+            
+    else:
+        print("command unrecognized! commands known: file")
+        
+    
+# print("im in hell")
